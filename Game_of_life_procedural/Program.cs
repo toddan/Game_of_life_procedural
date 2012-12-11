@@ -37,6 +37,11 @@ namespace ConsoleApplication1
         static int ypos;
 
         /*
+         * Cell char
+         * */
+        static string cellChar = "O";
+
+        /*
          * Cell array, each cell is a boolean that is either alive or dead.
          * True or False
          * */
@@ -196,7 +201,7 @@ namespace ConsoleApplication1
             if (cells[x, y] == true)
             {
                 Console.SetCursorPosition(x, y);
-                Console.WriteLine("O");
+                Console.WriteLine(cellChar);
             }
             else
             {
@@ -222,7 +227,7 @@ namespace ConsoleApplication1
         {
             Cells[xpos, ypos] = true;
             Console.SetCursorPosition(xpos, ypos);
-            Console.WriteLine("O");
+            Console.WriteLine(cellChar);
         }
 
         /*
@@ -234,7 +239,7 @@ namespace ConsoleApplication1
             Console.SetCursorPosition(xpos, ypos);
             if (Cells[xpos, ypos])
             {
-                Console.Write("O");
+                Console.Write(cellChar);
             }
             else
             {

@@ -21,3 +21,10 @@ C:\Users\tord\Documents\Visual Studio 2012\Projects\Game_of_life_prodecural\Game
 C:\Users\tord\Documents\Visual Studio 2012\Projects\Game_of_life_procedural\Game_of_life_procedural\bin\Debug\ConsoleApplication1.exe.config
 C:\Users\tord\Documents\Visual Studio 2012\Projects\Game_of_life_procedural\Game_of_life_procedural\obj\Debug\ConsoleApplication1.exe
 C:\Users\tord\Documents\Visual Studio 2012\Projects\Game_of_life_procedural\Game_of_life_procedural\obj\Debug\ConsoleApplication1.pdb
+C:\Users\tord\Documents\Visual Studio 2012\Projects\Game_of_life_procedural\Game_of_life_procedural\bin\Debug\ConsoleApplication1.exe.manifest
+C:\Users\tord\Documents\Visual Studio 2012\Projects\Game_of_life_procedural\Game_of_life_procedural\bin\Debug\ConsoleApplication1.application
+C:\Users\tord\Documents\Visual Studio 2012\Projects\Game_of_life_procedural\Game_of_life_procedural\bin\Debug\ConsoleApplication1.exe
+C:\Users\tord\Documents\Visual Studio 2012\Projects\Game_of_life_procedural\Game_of_life_procedural\bin\Debug\ConsoleApplication1.pdb
+C:\Users\tord\Documents\Visual Studio 2012\Projects\Game_of_life_procedural\Game_of_life_procedural\obj\Debug\Game_of_life_procedural.csprojResolveAssemblyReference.cache
+C:\Users\tord\Documents\Visual Studio 2012\Projects\Game_of_life_procedural\Game_of_life_procedural\obj\Debug\ConsoleApplication1.exe.manifest
+C:\Users\tord\Documents\Visual Studio 2012\Projects\Game_of_life_procedural\Game_of_life_procedural\obj\Debug\ConsoleApplication1.application
