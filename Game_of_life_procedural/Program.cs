@@ -25,7 +25,7 @@ namespace ConsoleApplication1
      *                                                          *
      ************************************************************/ 
      
-    class Program
+    static class Program
     {
         /*
          * x and y postitions of the cursor
@@ -39,8 +39,16 @@ namespace ConsoleApplication1
         static string cellChar = "O";
 
         /*
-         * Cell array, each cell is a boolean that is either alive or dead.
+         * Cell matrix, each cell is a boolean that is either alive or dead.
          * True or False
+         * 
+         * tiny example:
+         *  000
+         *  010
+         *  000
+         * 
+         * 0 = false
+         * 1 = true
          * */
         static bool[,] Cells = new bool[50, 25];
 
@@ -60,14 +68,18 @@ namespace ConsoleApplication1
         }
 
         /*
-         * Read the postition of the cursor in the console
-         * and starts the game when S is pressed
-         **/
+         * Read the postition of the cursor in the console.
+         * and starts the game when S is pressed.
+         * */
         static void read_cursor_position()
         {
             cki = Console.ReadKey();
             if (cki.Key == ConsoleKey.UpArrow)
             {
+               /* 
+                * Before we change the position of our cursor we must remove the previous
+                * char in the console. If not we will leave "lines" behind the cursor
+                **/
                 remove_char();
                 ypos--;
             }
@@ -98,7 +110,7 @@ namespace ConsoleApplication1
 
             if (cki.Key == ConsoleKey.S)
             {
-                while (true)
+                while (true)/* we want to loop the algorithm forever when we press the s key */
                 {
                     start_algorithm();
                 }
@@ -106,7 +118,9 @@ namespace ConsoleApplication1
         }
 
         /*
-         * Calculates a cells neighbour and return the results
+         * Calculates a cells neighbour and return the results.
+         * We look around each cell in the boolean cell matrix and count
+         * the number of neighbours
          * */
         static int neighbours(int x, int y)
         {
@@ -150,10 +164,19 @@ namespace ConsoleApplication1
 
         /*
          * Game of life algorithm.
-         * Depending on the number of alive neigbours the outcome of the cell is determined
+         * Depending on the number of alive neigbours the outcome of the cell is determined.
+         * 
+         * Rules for Game Of Life:
+         * 
+         * If a living cell has fewer than two living neighbours it will die. If the living
+         * cell has two or three lice neighbours it lives on to the next generation. If a living
+         * cell has more than three living neighbours it dies. If a dead cell has exactly
+         * three living neighbours it becomes alive.
+         * 
          * */
         static void start_algorithm()
         {
+            /* Allocate a new boolean cell matrix for each new generation */
             bool[,] new_generation = new bool[50, 25];
 
             for (int x = 1; x < 49; x++)
@@ -162,36 +185,42 @@ namespace ConsoleApplication1
                 {
                     if (Cells[x, y])
                     {
+                        /* If a cell is alive we check if it has two or three living neighbours */
                         if (neighbours(x,y) >= 2 && neighbours(x, y) <= 3)
                         {
                             new_generation[x, y] = true;
                         }
-                        else
+                        else/* if not it will die */
                         {
                             new_generation[x, y] = false;
                         }
                     }
                     else
                     {
+                        /* If a dead cell has three neighbours it will become alive */
                         if (neighbours(x,y) == 3)
                         {
                             new_generation[x, y] = true;
                         }
-                        else
+                        else /* else it will stay dead */
                         {
                             new_generation[x, y] = false;
                         }
                     }
 
+                    /* draw the next generation of cells on the console */
                     draw_cells(x, y,new_generation);
                 }
             }
+            /* make the previous generation of cells null */
             Cells = null;
+            /* insert the new generation of cells */
             Cells = new_generation;
         }
 
         /*
-         * Draws the cells on the console during game paly
+         * Draws the cells on the console during the algorithm.
+         * We also make sure we do not draw over any living cell.
          * */
         static void draw_cells(int x, int y,bool[,] cells)
         {
@@ -222,6 +251,7 @@ namespace ConsoleApplication1
          * */
         static void plant_cell()
         {
+            /* make the cell alive */
             Cells[xpos, ypos] = true;
             Console.SetCursorPosition(xpos, ypos);
             Console.WriteLine(cellChar);
@@ -246,6 +276,9 @@ namespace ConsoleApplication1
 
         /*
          * Game loop
+         * 
+         * the loop that keeps the whole game running.
+         * Not to be confused with the algorithm loop.
          * */
         static void game_loop()
         {
