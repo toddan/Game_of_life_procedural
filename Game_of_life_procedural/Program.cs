@@ -81,7 +81,14 @@ namespace ConsoleApplication1
                 * char in the console. If not we will leave "lines" behind the cursor
                 **/
                 remove_char();
-                ypos--;
+                //This if statement is added so that the game doesn't crash if you try to move a cursor outside of the console window.
+                //if ypos is 0, nothing happens, and if it is not, cursor can move up.
+                if (ypos == 0); //intentionally left empty
+                else
+                {
+                    ypos--;
+                }
+                
             }
 
             if (cki.Key == ConsoleKey.DownArrow)
@@ -93,7 +100,11 @@ namespace ConsoleApplication1
             if (cki.Key == ConsoleKey.LeftArrow)
             {
                 remove_char();
-                xpos--;
+                if (xpos == 0) ; //intentionally left empty
+                else
+                {
+                    xpos--;
+                }
             }
 
             if (cki.Key == ConsoleKey.RightArrow)

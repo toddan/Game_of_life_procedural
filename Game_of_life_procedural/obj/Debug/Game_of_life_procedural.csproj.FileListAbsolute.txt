@@ -28,3 +28,13 @@ C:\Users\tord\Documents\Visual Studio 2012\Projects\Game_of_life_procedural\Game
 C:\Users\tord\Documents\Visual Studio 2012\Projects\Game_of_life_procedural\Game_of_life_procedural\obj\Debug\Game_of_life_procedural.csprojResolveAssemblyReference.cache
 C:\Users\tord\Documents\Visual Studio 2012\Projects\Game_of_life_procedural\Game_of_life_procedural\obj\Debug\ConsoleApplication1.exe.manifest
 C:\Users\tord\Documents\Visual Studio 2012\Projects\Game_of_life_procedural\Game_of_life_procedural\obj\Debug\ConsoleApplication1.application
+C:\Users\Dobrica\Documents\GitHub\Game_of_life_procedural\Game_of_life_procedural\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\Dobrica\Documents\GitHub\Game_of_life_procedural\Game_of_life_procedural\obj\Debug\ConsoleApplication1.exe
+C:\Users\Dobrica\Documents\GitHub\Game_of_life_procedural\Game_of_life_procedural\obj\Debug\ConsoleApplication1.pdb
+C:\Users\Dobrica\Documents\GitHub\Game_of_life_procedural\Game_of_life_procedural\bin\Debug\ConsoleApplication1.exe.manifest
+C:\Users\Dobrica\Documents\GitHub\Game_of_life_procedural\Game_of_life_procedural\bin\Debug\ConsoleApplication1.application
+C:\Users\Dobrica\Documents\GitHub\Game_of_life_procedural\Game_of_life_procedural\bin\Debug\ConsoleApplication1.exe
+C:\Users\Dobrica\Documents\GitHub\Game_of_life_procedural\Game_of_life_procedural\bin\Debug\ConsoleApplication1.pdb
+C:\Users\Dobrica\Documents\GitHub\Game_of_life_procedural\Game_of_life_procedural\obj\Debug\Game_of_life_procedural.csprojResolveAssemblyReference.cache
+C:\Users\Dobrica\Documents\GitHub\Game_of_life_procedural\Game_of_life_procedural\obj\Debug\ConsoleApplication1.exe.manifest
+C:\Users\Dobrica\Documents\GitHub\Game_of_life_procedural\Game_of_life_procedural\obj\Debug\ConsoleApplication1.application
