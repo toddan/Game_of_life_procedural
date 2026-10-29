@@ -18,3 +18,13 @@ an (almost) procedural game of life implementation in C# written to be easy to u
                                                                
       LICENSE:                                                 
            Do what you want with it
+JavaScript version
+------------------
+
+There is also a port to plain JavaScript in `javascript/game_of_life.js`,
+written in the same beginner friendly, procedural style.
+It runs in a terminal with Node.js and needs no packages:
+
+    node javascript/game_of_life.js
+
+Arrow keys move the cursor, space plants a cell, s starts the simulation and q quits.
