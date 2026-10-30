@@ -166,17 +166,33 @@ function read_cursor_position(key)
 
     if (key == "s" || key == "S")
     {
-        running = true;
-        /* remove the cursor so it is not left on the board */
-        remove_char();
-        /*
-         * In C# we used while (true) to loop the algorithm forever.
-         * In the browser a while (true) loop would freeze the whole web page.
-         * Instead we ask the browser to call start_algorithm again and again
-         * with a small pause in between.
-         * */
-        setInterval(start_algorithm, speed);
+        start_simulation();
     }
+}
+
+/*
+ * Starts the simulation.
+ * Called when S is pressed or when the Start button is clicked.
+ * */
+function start_simulation()
+{
+    /* the simulation can only be started once */
+    if (running == true)
+    {
+        return;
+    }
+
+    running = true;
+    /* remove the cursor so it is not left on the board */
+    remove_char();
+    clear_edges();
+    /*
+     * In C# we used while (true) to loop the algorithm forever.
+     * In the browser a while (true) loop would freeze the whole web page.
+     * Instead we ask the browser to call start_algorithm again and again
+     * with a small pause in between.
+     * */
+    setInterval(start_algorithm, speed);
 }
 
 /*
@@ -296,6 +312,29 @@ function draw_cells(x, y, cells)
 }
 
 /*
+ * Removes all cells on the outer edge of the cell matrix.
+ *
+ * The algorithm never looks at the edge (see start_algorithm), so a cell
+ * planted there would never change and just stay on the screen forever.
+ * We kill those cells before the simulation starts so the board shows
+ * the same thing as the cell matrix.
+ * */
+function clear_edges()
+{
+    for (var x = 0; x < WIDTH; x++)
+    {
+        for (var y = 0; y < HEIGHT; y++)
+        {
+            if (x == 0 || x == WIDTH - 1 || y == 0 || y == HEIGHT - 1)
+            {
+                Cells[x][y] = false;
+                draw_cells(x, y, Cells);
+            }
+        }
+    }
+}
+
+/*
  * Draws the cursor on the current postion.
  * The cursor is drawn as a square outline so you can
  * still see if there is a cell under it.
@@ -400,6 +439,12 @@ function game_loop()
         {
             draw_cursor();
         }
+    });
+
+    /* phones do not have an S key, so there is also a Start button */
+    document.getElementById("start").addEventListener("click", function ()
+    {
+        start_simulation();
     });
 
     canvas.addEventListener("click", function (event)

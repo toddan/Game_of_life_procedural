@@ -35,4 +35,4 @@ Browser version
 `javascript/browser/` has the same game drawn on a `<canvas>` in the web browser.
 Just open `javascript/browser/index.html` in a browser, no server or packages needed.
 
-Arrow keys move the cursor, space (or a mouse click) plants a cell and s starts the simulation.
+Arrow keys move the cursor, space (or a mouse click) plants a cell and s (or the Start button) starts the simulation.

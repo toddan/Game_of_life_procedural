@@ -175,6 +175,8 @@ function read_cursor_position(key)
     {
         running = true;
         hide_cursor();
+        remove_char();
+        clear_edges();
         /*
          * In C# we used while (true) to loop the algorithm forever.
          * In JavaScript a while (true) loop would freeze the program so it
@@ -299,6 +301,29 @@ function draw_cells(x, y, cells)
     else
     {
         write_at(x, y, " ");
+    }
+}
+
+/*
+ * Removes all cells on the outer edge of the cell matrix.
+ *
+ * The algorithm never looks at the edge (see start_algorithm), so a cell
+ * planted there would never change and just stay on the screen forever.
+ * We kill those cells before the simulation starts so the board shows
+ * the same thing as the cell matrix.
+ * */
+function clear_edges()
+{
+    for (var x = 0; x < WIDTH; x++)
+    {
+        for (var y = 0; y < HEIGHT; y++)
+        {
+            if (x == 0 || x == WIDTH - 1 || y == 0 || y == HEIGHT - 1)
+            {
+                Cells[x][y] = false;
+                draw_cells(x, y, Cells);
+            }
+        }
     }
 }
 
