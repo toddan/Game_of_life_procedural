@@ -28,3 +28,11 @@ It runs in a terminal with Node.js and needs no packages:
     node javascript/game_of_life.js
 
 Arrow keys move the cursor, space plants a cell, s starts the simulation and q quits.
+
+Browser version
+---------------
+
+`javascript/browser/` has the same game drawn on a `<canvas>` in the web browser.
+Just open `javascript/browser/index.html` in a browser, no server or packages needed.
+
+Arrow keys move the cursor, space (or a mouse click) plants a cell and s starts the simulation.
